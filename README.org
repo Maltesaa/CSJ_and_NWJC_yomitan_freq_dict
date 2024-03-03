@@ -1,6 +1,7 @@
 #+TITLE: Corpus of Spontaneous Japanese Yomitan Frequency Dictionary
 
-Fork of [forsakeninfinity's script](https://github.com/forsakeninfinity/CEJC_yomichan_freq_dict) to support CSJ instead. Check his repo for information.
+Fork of [[https://github.com/forsakeninfinity/CEJC_yomichan_freq_dict][forsakeninfinity's script]] to support CSJ instead. Check his repo for information.
 
-[Click here to read more](https://clrd.ninjal.ac.jp/csj/en/index.html)
-> "The Corpus of Spontaneous Japanese" (or CSJ) is a database containing a large collection of Japanese spoken language data and information for use in linguistic research; jointly developed by NINJAL, NICT and the Tokyo Institute of Technology, the CSJ is world-class in both the quantity and quality of the available data. 
+"The Corpus of Spontaneous Japanese" (or CSJ) is a database containing a large collection of Japanese spoken language data and information for use in linguistic research; jointly developed by NINJAL, NICT and the Tokyo Institute of Technology, the CSJ is world-class in both the quantity and quality of the available data. 
+
+[[https://clrd.ninjal.ac.jp/csj/en/index.html][Click here to read more]] 
