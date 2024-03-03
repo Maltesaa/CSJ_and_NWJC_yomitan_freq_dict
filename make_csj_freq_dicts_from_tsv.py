@@ -25,10 +25,10 @@ frequency dictionaries corresponding to the different rankings in different
 domains for the words. Each dict only has one one term_meta_bank_1.json file
 fwiw.
 
-The dictionary source files are written to "{cwd}/dicts/{domain}/" per domain.
+The dictionary source files are written to "{cwd}/CSJ dicts/{domain}/" per domain.
 
 The zip files that can actually be imported in yomitan are written to
-"{cwd}/releases/Corpus of Spontaneous Japanese - CSJ ({domain}).zip" per
+"{cwd}/CSJ releases/Corpus of Spontaneous Japanese - CSJ ({domain}).zip" per
 domain.
 
 '''
@@ -68,7 +68,7 @@ def get_index_metadata(domain, word_key):
         'revision': f'CSJ_ver201803_{datetime.datetime.now(datetime.timezone.utc).isoformat()}',
         'frequencyMode': 'rank-based',
         'url': 'https://clrd.ninjal.ac.jp/csj/en/index.html',
-        'description': 'Converted programmatically from the dataset. See repo at https://github.com/Maltesaa/CSJ_yomitan_freq_dict. Fork of https://github.com/forsakeninfinity/CEJC_yomichan_freq_dict',
+        'description': 'Converted programmatically from the dataset. See repo at https://github.com/Maltesaa/CSJ_and_NWJC_yomitan_freq_dict. Fork of https://github.com/forsakeninfinity/CEJC_yomichan_freq_dict',
     }
 
 
@@ -83,7 +83,7 @@ data.dropna(subset=['lemma'], inplace=True) # Drop empty words without data
 domains_to_rank_keys = {k.removesuffix('_rank') : k for k in data if k.endswith('_rank') and not 'コア' in k}
 domains_to_rank_keys[word_key] = overall_rank_key
 
-os.makedirs('releases', exist_ok=True)
+os.makedirs('CSJ releases', exist_ok=True)
 words = data[word_key].to_numpy()
 readings = data[reading_key].to_numpy()
 for domain, rank_key in domains_to_rank_keys.items():
@@ -108,7 +108,7 @@ for domain, rank_key in domains_to_rank_keys.items():
         outzip.write('index.json')
         outzip.write('term_meta_bank_1.json')
 
-    os.makedirs(f'dicts/{domain}', exist_ok=True)
-    shutil.move('term_meta_bank_1.json', f'dicts/{domain}')
-    shutil.move('index.json', f'dicts/{domain}')
-    shutil.move(zip_path, 'releases')
+    os.makedirs(f'CSJ dicts/{domain}', exist_ok=True)
+    shutil.move('term_meta_bank_1.json', f'CSJ dicts/{domain}')
+    shutil.move('index.json', f'CSJ dicts/{domain}')
+    shutil.move(zip_path, 'CSJ releases')
