@@ -4,10 +4,14 @@ Fork of [[https://github.com/forsakeninfinity/CEJC_yomichan_freq_dict][forsakeni
 
 * The Corpus of Spontaneous Japanese
 
+*Goes up to 31,605 frequency*
+
 "The Corpus of Spontaneous Japanese" (or CSJ) is a database containing a large collection of Japanese spoken language data and information for use in linguistic research; jointly developed by NINJAL, NICT and the Tokyo Institute of Technology, the CSJ is world-class in both the quantity and quality of the available data. 
 
 More information can be found [[https://clrd.ninjal.ac.jp/csj/en/index.html][here]] 
 
 * NINJAL Web Japanese Corpus
+
+*Goes up to 106,762 frequency*
 
 More information can be found [[https://masayu-a.github.io/NWJC/][here]] (in Japanese)
