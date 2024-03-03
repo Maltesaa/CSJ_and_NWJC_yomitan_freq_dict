@@ -58,7 +58,7 @@ def make_freq_listings(data, words, readings, domain, rank_key):
 
 
 def get_index_metadata(domain, word_key):
-    title = 'CSJ'
+    title = '話し言葉 CSJ'
     if domain != word_key:
         title += f' ({domain})'
 

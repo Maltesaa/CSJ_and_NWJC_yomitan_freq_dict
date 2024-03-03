@@ -46,7 +46,7 @@ def make_freq_listings(data, words, readings, rank_key):
 
 
 def get_index_metadata():
-    title = 'NWJC'
+    title = 'ウェブ NWJC'
 
     return {
         'title': title,
