@@ -26,11 +26,22 @@ import json
 import os
 import shutil
 import zipfile
-
+import re
 import jaconv
 import numpy
 import pandas as pd
 
+
+def partial_hiragana_conversion(word, reading):
+    common_chars = set(word)
+    def replace_char(char):
+        if char not in common_chars:
+            return jaconv.kata2hira(char)
+        else:
+            return char
+
+    result = ''.join(replace_char(char) for char in reading)
+    return result
 
 def make_freq_listings(data, words, readings, rank_key):
     ranks = data[rank_key].to_numpy()
@@ -39,7 +50,7 @@ def make_freq_listings(data, words, readings, rank_key):
         listings.append([
             words[i],
             'freq',
-            { 'reading': jaconv.kata2hira(str(readings[i])), 'frequency': int(ranks[i]) }
+            { 'reading': jaconv.kata2hira(str(readings[i])) if not re.search(r'[ァ-ンー]+[一-龯]*', words[i]) else partial_hiragana_conversion(str(words[i]), str(readings[i])), 'frequency': int(ranks[i]) }
         ])
 
     return listings
